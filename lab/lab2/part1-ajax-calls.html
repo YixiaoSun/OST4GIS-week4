@@ -19,3 +19,9 @@
     <script src="js/part1-ajax-calls.js"></script>
   </body>
 </html>
+
+*/
+
+var promise=$.ajax("https://github.com/CPLN-692-401/datasets/blob/master/json/philadelphia-crime-snippet.json");
+var recipe = function (response){return JSON.parse (response);};
+var x= promise.then (recipe);

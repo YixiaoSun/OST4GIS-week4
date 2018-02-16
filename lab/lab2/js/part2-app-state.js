@@ -33,16 +33,25 @@
 ===================== */
 
 // Use the data source URL from lab 1 in this 'ajax' function:
-var downloadData = $.ajax("http://");
+var downloadData = $.ajax("http://raw.githubusercontent.com/CPLN-692-401/datasets/master/json/philadelphia-crime-snippet.json");
 
 // Write a function to prepare your data (clean it up, organize it as you like, create fields, etc)
-var parseData = function() {};
+var parseData = function(data) {
+  return JSON.parse (data);
+};
 
 // Write a function to use your parsed data to create a bunch of marker objects (don't plot them!)
-var makeMarkers = function() {};
+var makeMarkers = function(data2) {
+  return _.map(data2, function(data){return L.marker([data.Lat,data.Lng]);});
+};
+
 
 // Now we need a function that takes this collection of markers and puts them on the map
-var plotMarkers = function() {};
+var plotMarkers = function(data3) {
+  for (i=0; i<data3.length; i++){
+    data3[i].addTo(map);
+  }
+};
 
 // At this point you should see a bunch of markers on your map.
 // Don't continue on until you can make them appear!
@@ -61,7 +70,11 @@ var plotMarkers = function() {};
 ===================== */
 
 // Look to the bottom of this file and try to reason about what this function should look like
-var removeMarkers = function() {};
+var removeMarkers = function(data4) {
+  for (i=0; i<data4.length; i++){
+    map.removeLayer(data4[i]);
+  }
+};
 
 /* =====================
   Optional, stretch goal
@@ -93,7 +106,9 @@ var Stamen_TonerLite = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/ton
 
 downloadData.done(function(data) {
   var parsed = parseData(data);
+  console.log(parsed);
   var markers = makeMarkers(parsed);
+  console.log(markers);
   plotMarkers(markers);
   removeMarkers(markers);
 });

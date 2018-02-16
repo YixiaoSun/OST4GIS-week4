@@ -1,0 +1,56 @@
+#schooldiv{
+  background-color:lightgrey;
+  padding: 0.2px;
+  margin-bottom: 2px;
+}
+
+h1{
+  font-family:Verdana;
+  font-weight:bold;
+  display:inline;
+  vertical-align:middle;
+}
+
+h2{
+  font-family:Verdana;
+  font-size:12pt;
+}
+
+h3{
+  font-family:Verdana;
+  font-size:12pt;
+  color: grey;
+}
+
+p{
+  font-family:Verdana;
+  font-size:10pt;
+  color: black;
+}
+
+h4{
+  font-family:Verdana;
+  font-size:12pt;
+}
+
+button{
+  float:right;
+  display:inline;
+  vertical-align:middle;
+}
+
+input{
+  width:100%;
+}
+
+#seperator{
+  border:0.5px solid black;
+}
+
+#Alll{  
+  font-size:4pt;
+}
+
+#center{
+  box-sizing: border-box;
+}
